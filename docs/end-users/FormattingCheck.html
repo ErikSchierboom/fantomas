@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en" data-root="https://fsprojects.github.io/fantomas/">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Florian Verdonck, Jindřich Ivánek, David Schaefer" name="author">
+    <!-- Opengraph properties (https://ogp.me/) -->
+    <meta property="og:site_name" content="fantomas">
+    <meta property="og:title" content="Formatting Check
+" />
+    <meta property="og:url" content="https://fsprojects.github.io/fantomas/docs/end-users/FormattingCheck.html">
+    <meta property="og:type" content="website" />
+    <!-- Twitter cards (https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/summary-card-with-large-image) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="https://fsprojects.github.io/fantomas/">
+    <meta name="twitter:title" content="Formatting Check
+">
+    
+    <title>Formatting Check
+ | fantomas</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link href="https://fsprojects.github.io/fantomas/images/favicon.ico" rel="icon" sizes="32x32" type="image/png"/>
+    <script type="application/javascript" src="https://fsprojects.github.io/fantomas/content/fsdocs-theme-set-dark.js"></script>
+    <link href="https://fsprojects.github.io/fantomas/content/fsdocs-default.css" rel="stylesheet" type="text/css"/>
+    <link href="https://fsprojects.github.io/fantomas/content/fsdocs-theme.css" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,400&family=Reem+Kufi:wght@400;500;700&display=swap" rel="stylesheet">
+
+    
+</head>
+<body class="content">
+<header>
+    <div class="start">
+        <div id="menu-toggle">
+            <iconify-icon class="icon closed" height="22" icon="eva:menu-fill" width="22"></iconify-icon>
+            <iconify-icon class="icon open" height="22" icon="mi:close" width="22"></iconify-icon>
+            <input type="checkbox" name="mobile-menu" />
+            <ul class="menu">
+                <li class="nav-header">Links</li>
+                <li class="nav-item"><a class="nav-link" href="https://github.com/fsprojects/fantomas/blob/main/LICENSE.md">License</a>
+                </li>
+                <li class="nav-item"><a class="nav-link"
+                                        href="https://github.com/fsprojects/fantomas/blob/main/CHANGELOG.md">Release
+                    Notes</a></li>
+                <li class="nav-item"><a class="nav-link" href="https://github.com/fsprojects/fantomas/">Source
+                    Repository</a></li>
+                <li class="nav-header active" id="end-users">
+    End-users
+    <iconify-icon icon="fluent:chevron-up-24-regular" width="32" height="32" rotate="180deg"></iconify-icon>
+</li>
+<div class="menu-items">
+    <li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/GettingStarted.html" class="nav-link" > Getting Started
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/StyleGuide.html" class="nav-link" > Style guide
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/Configuration.html" class="nav-link" > Configuration
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/IgnoreFiles.html" class="nav-link" > Ignore Files
+</a></li>
+
+<li class="nav-item active"><a href="https://fsprojects.github.io/fantomas/docs/end-users/FormattingCheck.html" class="nav-link" > Formatting Check
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/GitHooks.html" class="nav-link" > Git hooks
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/Rider.html" class="nav-link" > JetBrains Rider
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/VisualStudio.html" class="nav-link" > Visual Studio
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/VSCode.html" class="nav-link" > Visual Studio Code
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/GeneratingCode.html" class="nav-link" > Generating source code
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/UpgradeGuide.html" class="nav-link" > Upgrade guide
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/Recipes.html" class="nav-link" > Recipes
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/FAQ.html" class="nav-link" > FAQ
+</a></li>
+
+</div>
+<li class="nav-header " id="contributors">
+    Contributors
+    <iconify-icon icon="fluent:chevron-up-24-regular" width="32" height="32" rotate="180deg"></iconify-icon>
+</li>
+<div class="menu-items">
+    <li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Index.html" class="nav-link" > Contributors
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/FSharp.html" class="nav-link" > F#
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Getting Started.html" class="nav-link" > Getting started
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Solution Structure.html" class="nav-link" > Solution structure
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Transforming.html" class="nav-link" > Fantomas.Core overview (1)
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Traverse.html" class="nav-link" > Fantomas.Core overview (2)
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Formatted Code.html" class="nav-link" > Fantomas.Core overview (3)
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Conditional Compilation Directives.html" class="nav-link" > Formatting Conditional Compilation Directives
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/How Can I Contribute.html" class="nav-link" > How can I contribute?
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/The Missing Comment.html" class="nav-link" > The Missing Comment
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Multiple Times.html" class="nav-link" > Fantomas is trying to format the input multiple times due to the detection of multiple defines
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Pull request ground rules.html" class="nav-link" > Pull request ground rules
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Updating the compiler.html" class="nav-link" > Updating the compiler sources
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Releases.html" class="nav-link" > Releases
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Glossary.html" class="nav-link" > Glossary
+</a></li>
+
+</div>
+                <li class="nav-header " id="api_reference">
+    API Reference
+    <iconify-icon icon="fluent:chevron-up-24-regular" width="32" height="32" rotate="180deg"></iconify-icon>
+</li>
+<div class="menu-items">
+    <li class="nav-item active"><a href="https://fsprojects.github.io/fantomas/reference/index.html" class="nav-link" > All Namespaces</a></li>
+
+</div>
+            </ul>
+        </div>
+        <a href="https://fsprojects.github.io/fantomas/">
+            <img alt="Header menu logo" src="https://fsprojects.github.io/fantomas/images/logo.png">
+            <strong>fantomas</strong>
+        </a>
+    </div>
+    <div class="end">
+        <a href="https://github.com/fsprojects/fantomas/" target="_blank">
+            <iconify-icon icon="uil:github" width="26" height="26"></iconify-icon>
+        </a>
+        <iconify-icon id="search-btn" icon="carbon:search" class="search" width="24" height="24"></iconify-icon>
+        <fsdocs-theme-toggle></fsdocs-theme-toggle>
+    </div>
+</header>
+<aside id="fsdocs-main-menu">
+    <ul class="menu">
+        <li class="nav-header">Links</li>
+        <li class="nav-item"><a class="nav-link" href="https://github.com/fsprojects/fantomas/blob/main/LICENSE.md">License</a>
+        </li>
+        <li class="nav-item"><a class="nav-link"
+                                href="https://github.com/fsprojects/fantomas/blob/main/CHANGELOG.md">Release
+            Notes</a></li>
+        <li class="nav-item"><a class="nav-link" href="https://github.com/fsprojects/fantomas/">Source
+            Repository</a></li>
+        <li class="nav-header active" id="end-users">
+    End-users
+    <iconify-icon icon="fluent:chevron-up-24-regular" width="32" height="32" rotate="180deg"></iconify-icon>
+</li>
+<div class="menu-items">
+    <li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/GettingStarted.html" class="nav-link" > Getting Started
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/StyleGuide.html" class="nav-link" > Style guide
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/Configuration.html" class="nav-link" > Configuration
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/IgnoreFiles.html" class="nav-link" > Ignore Files
+</a></li>
+
+<li class="nav-item active"><a href="https://fsprojects.github.io/fantomas/docs/end-users/FormattingCheck.html" class="nav-link" > Formatting Check
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/GitHooks.html" class="nav-link" > Git hooks
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/Rider.html" class="nav-link" > JetBrains Rider
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/VisualStudio.html" class="nav-link" > Visual Studio
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/VSCode.html" class="nav-link" > Visual Studio Code
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/GeneratingCode.html" class="nav-link" > Generating source code
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/UpgradeGuide.html" class="nav-link" > Upgrade guide
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/Recipes.html" class="nav-link" > Recipes
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/FAQ.html" class="nav-link" > FAQ
+</a></li>
+
+</div>
+<li class="nav-header " id="contributors">
+    Contributors
+    <iconify-icon icon="fluent:chevron-up-24-regular" width="32" height="32" rotate="180deg"></iconify-icon>
+</li>
+<div class="menu-items">
+    <li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Index.html" class="nav-link" > Contributors
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/FSharp.html" class="nav-link" > F#
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Getting Started.html" class="nav-link" > Getting started
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Solution Structure.html" class="nav-link" > Solution structure
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Transforming.html" class="nav-link" > Fantomas.Core overview (1)
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Traverse.html" class="nav-link" > Fantomas.Core overview (2)
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Formatted Code.html" class="nav-link" > Fantomas.Core overview (3)
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Conditional Compilation Directives.html" class="nav-link" > Formatting Conditional Compilation Directives
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/How Can I Contribute.html" class="nav-link" > How can I contribute?
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/The Missing Comment.html" class="nav-link" > The Missing Comment
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Multiple Times.html" class="nav-link" > Fantomas is trying to format the input multiple times due to the detection of multiple defines
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Pull request ground rules.html" class="nav-link" > Pull request ground rules
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Updating the compiler.html" class="nav-link" > Updating the compiler sources
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Releases.html" class="nav-link" > Releases
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Glossary.html" class="nav-link" > Glossary
+</a></li>
+
+</div>
+        <li class="nav-header " id="api_reference">
+    API Reference
+    <iconify-icon icon="fluent:chevron-up-24-regular" width="32" height="32" rotate="180deg"></iconify-icon>
+</li>
+<div class="menu-items">
+    <li class="nav-item active"><a href="https://fsprojects.github.io/fantomas/reference/index.html" class="nav-link" > All Namespaces</a></li>
+
+</div>
+    </ul>
+</aside>
+<main>
+    <div id="content">
+        
+<h1><a name="Formatting-Check" class="anchor" href="#Formatting-Check">Formatting Check</a></h1>
+<p>Formatting source code is a habit, a step in your developer workflow.<br />
+The benefits of consistently formatting is that <strong>your delta</strong> (<em>typically the changes in the files of a pull request</em>) will be the <strong>smallest set possible</strong> if every previous change was formatted.</p>
+<h2><a name="The-tragedy-of-the-ancient-Greek-developers" class="anchor" href="#The-tragedy-of-the-ancient-Greek-developers">The tragedy of the ancient Greek developers</a></h2>
+<p>When working with multiple people on the same code base, it is important (to some degrees) that you cannot distinguish who wrote the code.
+If you agree as a team that you need to write unit tests to guarantee the code quality, you expect every developer to cover any new code with a test.<br />
+Formatting is no different, every developer should do it and it is an acceptance criteria for new code.</p>
+<p>Imagine we have multiple developers in our team. Hektor made the initial setup and during a team meeting it was decided that the code should always be formatted.<br />
+Once the initial project structure was delivered, Achilles made a change where the code was not formatted.<br />
+The next day, Odysseus wants to submit a new pull request. As agreed code should be formatted, so Odysseus did exactly that.
+As the changes Achilles made were not formatted, there was more code touched than was absolutely necessary. Perseus didn't see any harm in this rectification and merge the pull request as is.</p>
+<p>A week later, a huge problem was discovered in production. There was data loss and the entire company was on fire.
+Fuelled by rage and anger Hektor wanted to know who was responsible for this devastating tragedy. You guessed it, somebody's head was about to roll.
+Perseus was tasked with getting to the bottom of this mystery and eventually he located the source of the misery.  Hektor tasked him with running a <code>git blame</code> command, to see who the culprit really was.</p>
+<p>Odysseus credentials showed up, but it was the function Achilles originally wrote. Unable to escape Hektor's wrath, Odysseus was fired immediately.
+Achilles felt bad but couldn't come clean as he was about to get surgery for his heel. Odysseus took the fall like a true hero.
+But it lead him to a downwards spiral and would take him ten years before he could land another job in the software industry.</p>
+<h3><a name="Aftermath" class="anchor" href="#Aftermath">Aftermath</a></h3>
+<p>The team was shocked by what had transpired. Besides Hektor overreacting, another painful meeting was planned to have a retrospective on the past events.<br />
+After asking five why's, the team had to brainstorm on how to avoid these things.</p>
+<p>Ultimately, that meeting was mostly about the contents of the function Achilles wrote, but to end on a high note, the team discussed formatting source code afterwards.</p>
+<p>The moral of this story is that there are two things that could have saved Odysseus: <strong>a formatting check during continuous integration</strong> and a <code>.git-blame-ignore-revs</code> file.</p>
+<h2><a name="check" class="anchor" href="#check">--check</a></h2>
+<p><em>starting version 3.3</em></p>
+<p>Verify that a single file or folder was formatted correctly.</p>
+<blockquote>
+<p>dotnet fantomas --check Source.fs</p>
+</blockquote>
+<p>This will verify if the file <code>Source.fs</code> still needs formatting.
+If it does, the process will return exit code <strong>99</strong>.
+In the case that the file does not require any formatting, exit code 0 is returned.
+Unexpected errors will return exit code 1.</p>
+<p>This scenario is meant to be executed in a continuous integration environment, to enforce that the newly added code was formatted correctly.</p>
+<h3><a name="FAKE" class="anchor" href="#FAKE">FAKE</a></h3>
+<p>If you are using <code>FAKE</code> by any chance, a good step is to have <code>CheckFormat</code> target early on in the pipeline.</p>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="id">Target</span><span class="pn">.</span><span class="id">create</span> <span class="s">&quot;CheckFormat&quot;</span> <span class="pn">(</span><span class="k">fun</span> <span class="id">_</span> <span class="k">-&gt;</span>
+    <span class="k">let</span> <span class="id">result</span> <span class="o">=</span>
+        <span class="id">DotNet</span><span class="pn">.</span><span class="id">exec</span> <span onmouseout="hideTip(event, 'fs1', 1)" onmouseover="showTip(event, 'fs1', 1)" class="id">id</span> <span class="s">&quot;fantomas ourSourceFolder --recurse --check&quot;</span>
+
+    <span class="k">if</span> <span class="id">result</span><span class="pn">.</span><span class="id">ExitCode</span> <span class="o">=</span> <span class="n">0</span> <span class="k">then</span>
+        <span class="id">Trace</span><span class="pn">.</span><span class="id">log</span> <span class="s">&quot;No files need formatting&quot;</span>
+    <span class="k">elif</span> <span class="id">result</span><span class="pn">.</span><span class="id">ExitCode</span> <span class="o">=</span> <span class="n">99</span> <span class="k">then</span>
+        <span onmouseout="hideTip(event, 'fs2', 2)" onmouseover="showTip(event, 'fs2', 2)" class="id">failwith</span> <span class="s">&quot;Some files need formatting, run \&quot;dotnet fantomas  ourSourceFolder --recurse\&quot; to resolve this.&quot;</span>
+    <span class="k">else</span>
+        <span class="id">Trace</span><span class="pn">.</span><span class="id">logf</span> <span class="s">&quot;Errors while formatting: %A&quot;</span> <span class="id">result</span><span class="pn">.</span><span class="id">Errors</span><span class="pn">)</span>
+        
+<span class="c">// ... more targets</span>
+
+<span class="s">&quot;Clean&quot;</span>
+<span class="pn">==&gt;</span> <span class="s">&quot;CheckFormat&quot;</span>
+<span class="pn">==&gt;</span> <span class="s">&quot;Build&quot;</span>
+<span class="pn">==&gt;</span> <span class="s">&quot;UnitTests&quot;</span>
+<span class="pn">==&gt;</span> <span class="s">&quot;Benchmark&quot;</span>
+<span class="pn">==&gt;</span> <span class="s">&quot;Pack&quot;</span>
+<span class="pn">==&gt;</span> <span class="s">&quot;Docs&quot;</span>
+<span class="pn">==&gt;</span> <span class="s">&quot;All&quot;</span>
+
+<span class="id">Target</span><span class="pn">.</span><span class="id">runOrDefault</span> <span class="s">&quot;All&quot;</span>
+</code></pre>
+<p>The recommendation is to install <code>fantomas</code> as a local tool and run it using the generic <code>DotNet.exec</code> api.
+This translates to running <code>dotnet fantomas ourSourceFolder --recurse --check</code>.</p>
+<h3><a name="Any-other-continuous-integration-environment" class="anchor" href="#Any-other-continuous-integration-environment">Any other continuous integration environment</a></h3>
+<p>You want to restore your local <code>fantomas</code> tool using <code>dotnet tool restore</code>.
+Next, you want to run <code>dotnet fantomas &lt;input&gt; --check</code> and make sure your continuous integration environment <strong>fails</strong> your job when <strong>a non-zero exit code</strong> is returned.</p>
+<p><strong>Pro-tip</strong>: print the command users need to run to fix the formatting in the output log when the check failed. This is useful for open-source projects where new contributors might never have been exposed to formatting.</p>
+<h2><a name="A-git-blame-ignore-revs-file" class="anchor" href="#A-git-blame-ignore-revs-file">A git-blame-ignore-revs file</a></h2>
+<p>By default, Fantomas adheres to the Microsoft <a href="https://docs.microsoft.com/en-us/dotnet/fsharp/style-guide/formatting">F# code formatting guidelines</a>.
+If these change, Fantomas will follow accordingly. Due to this reason, the output cannot be guaranteed to remain the same when upgrading to a new minor version.</p>
+<p>If you are using Git for your source control, it is recommended to ignore commits where <code>fantomas</code> was updated using a <a href="https://git-scm.com/docs/git-blame#Documentation/git-blame.txt---ignore-revltrevgt">.git-blame-ignore-revs file</a>.
+Check out this <a href="https://www.moxio.com/blog/43/ignoring-bulk-change-commits-with-git-blame">blogpost</a> for more details.</p>
+<p>Adding a formatting commit to a configured <code>.git-blame-ignore-revs</code> file will prevent you from drawing the wrong conclusions when running a <code>git blame</code> command.
+One thing to note is that if you add a commit SHA to a <code>.git-blame-ignore-revs</code> file, you cannot squash the commit when merging in the pull request.</p>
+<h2><a name="Checking-is-good-for-regressions" class="anchor" href="#Checking-is-good-for-regressions">Checking is good for regressions</a></h2>
+<p>Normally, the rule of thumb is that the code style will not change between revisions.<br />
+If you are using <code>4.7.2</code>, then it should be safe for you upgrade to the latest <code>4.7.X</code> without seeing any changes.</p>
+<blockquote>
+<p>Life happens, so this is a best effort guarantee</p>
+</blockquote>
+<p>In case you do see a change that cannot be linked to anything in the <a href="https://github.com/fsprojects/fantomas/blob/main/CHANGELOG.md">CHANGELOG.md</a> file, you may have detected a regression.<br />
+Or, more likely, you have something slightly different in your code base that isn't covered yet by a unit test.</p>
+<p>No matter the case, when you have a <code>--check</code> command somewhere in your continuous integration environment, please consider running a build with the latest compatible version from time to time.<br />
+It really helps us spotting problems early on and we can more easily pinpoint the problem due to lesser recent changes.</p>
+<fantomas-nav previous="IgnoreFiles.html" next="GitHooks.html"></fantomas-nav>
+
+        <div class="fsdocs-tip" id="fs1">val id: x: &#39;T -&gt; &#39;T</div>
+<div class="fsdocs-tip" id="fs2">val failwith: message: string -&gt; &#39;T</div>
+
+    </div>
+</main>
+<aside id="fsdocs-page-menu">
+    <p id="on-this-page">On this page</p>
+    <ul>
+  <li class="level-1">
+    <a href="#Formatting-Check">
+      Formatting Check
+    </a>
+  </li>
+  <li class="level-2">
+    <a href="#The-tragedy-of-the-ancient-Greek-developers">
+      The tragedy of the ancient Greek developers
+    </a>
+  </li>
+  <li class="level-3">
+    <a href="#Aftermath">
+      Aftermath
+    </a>
+  </li>
+  <li class="level-2">
+    <a href="#check">
+      --check
+    </a>
+  </li>
+  <li class="level-3">
+    <a href="#FAKE">
+      FAKE
+    </a>
+  </li>
+  <li class="level-3">
+    <a href="#Any-other-continuous-integration-environment">
+      Any other continuous integration environment
+    </a>
+  </li>
+  <li class="level-2">
+    <a href="#A-git-blame-ignore-revs-file">
+      A git-blame-ignore-revs file
+    </a>
+  </li>
+  <li class="level-2">
+    <a href="#Checking-is-good-for-regressions">
+      Checking is good for regressions
+    </a>
+  </li>
+</ul>
+</aside>
+<dialog>
+    <input type="search" placeholder="Search docs" />
+    <div class="results">
+        <ul></ul>
+        <p class="empty">Type something to start searching.</p>
+    </div>
+</dialog>
+<script type="module" src="https://fsprojects.github.io/fantomas/content/fsdocs-tips.js"></script>
+<script type="module" src="https://fsprojects.github.io/fantomas/content/fsdocs-theme-toggle.js"></script>
+<script type="module" src="https://fsprojects.github.io/fantomas/content/fsdocs-theme.js"></script>
+<script type="module" src="https://fsprojects.github.io/fantomas/content/fsdocs-search.js"></script>
+<script type="module">
+    import mermaid from "https://esm.sh/mermaid@9.2.2";
+    mermaid.initialize({
+        startOnLoad: true,
+        theme: "base",
+        themeVariables: {
+            primaryColor: '#338cbb',
+            primaryTextColor: '#FFF',
+            primaryBorderColor: '#5aacd6'
+        }
+    });
+
+    const menuHeaders = [...document.querySelectorAll(".nav-header")].filter(nh => nh.id);
+    menuHeaders.forEach(nv => {
+        nv.addEventListener("click", () => {
+            nv.classList.toggle("active");
+        })
+    })
+</script>
+<script type="module" src="https://fsprojects.github.io/fantomas/content/webcomponents.js"></script>
+</body>
+</html>

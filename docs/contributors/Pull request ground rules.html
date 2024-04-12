@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en" data-root="https://fsprojects.github.io/fantomas/">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Florian Verdonck, Jindřich Ivánek, David Schaefer" name="author">
+    <!-- Opengraph properties (https://ogp.me/) -->
+    <meta property="og:site_name" content="fantomas">
+    <meta property="og:title" content="Pull request ground rules
+" />
+    <meta property="og:url" content="https://fsprojects.github.io/fantomas/docs/contributors/Pull request ground rules.html">
+    <meta property="og:type" content="website" />
+    <!-- Twitter cards (https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/summary-card-with-large-image) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="https://fsprojects.github.io/fantomas/">
+    <meta name="twitter:title" content="Pull request ground rules
+">
+    
+    <title>Pull request ground rules
+ | fantomas</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link href="https://fsprojects.github.io/fantomas/images/favicon.ico" rel="icon" sizes="32x32" type="image/png"/>
+    <script type="application/javascript" src="https://fsprojects.github.io/fantomas/content/fsdocs-theme-set-dark.js"></script>
+    <link href="https://fsprojects.github.io/fantomas/content/fsdocs-default.css" rel="stylesheet" type="text/css"/>
+    <link href="https://fsprojects.github.io/fantomas/content/fsdocs-theme.css" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,400&family=Reem+Kufi:wght@400;500;700&display=swap" rel="stylesheet">
+
+    
+</head>
+<body class="content">
+<header>
+    <div class="start">
+        <div id="menu-toggle">
+            <iconify-icon class="icon closed" height="22" icon="eva:menu-fill" width="22"></iconify-icon>
+            <iconify-icon class="icon open" height="22" icon="mi:close" width="22"></iconify-icon>
+            <input type="checkbox" name="mobile-menu" />
+            <ul class="menu">
+                <li class="nav-header">Links</li>
+                <li class="nav-item"><a class="nav-link" href="https://github.com/fsprojects/fantomas/blob/main/LICENSE.md">License</a>
+                </li>
+                <li class="nav-item"><a class="nav-link"
+                                        href="https://github.com/fsprojects/fantomas/blob/main/CHANGELOG.md">Release
+                    Notes</a></li>
+                <li class="nav-item"><a class="nav-link" href="https://github.com/fsprojects/fantomas/">Source
+                    Repository</a></li>
+                <li class="nav-header " id="end-users">
+    End-users
+    <iconify-icon icon="fluent:chevron-up-24-regular" width="32" height="32" rotate="180deg"></iconify-icon>
+</li>
+<div class="menu-items">
+    <li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/GettingStarted.html" class="nav-link" > Getting Started
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/StyleGuide.html" class="nav-link" > Style guide
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/Configuration.html" class="nav-link" > Configuration
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/IgnoreFiles.html" class="nav-link" > Ignore Files
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/FormattingCheck.html" class="nav-link" > Formatting Check
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/GitHooks.html" class="nav-link" > Git hooks
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/Rider.html" class="nav-link" > JetBrains Rider
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/VisualStudio.html" class="nav-link" > Visual Studio
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/VSCode.html" class="nav-link" > Visual Studio Code
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/GeneratingCode.html" class="nav-link" > Generating source code
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/UpgradeGuide.html" class="nav-link" > Upgrade guide
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/Recipes.html" class="nav-link" > Recipes
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/FAQ.html" class="nav-link" > FAQ
+</a></li>
+
+</div>
+<li class="nav-header active" id="contributors">
+    Contributors
+    <iconify-icon icon="fluent:chevron-up-24-regular" width="32" height="32" rotate="180deg"></iconify-icon>
+</li>
+<div class="menu-items">
+    <li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Index.html" class="nav-link" > Contributors
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/FSharp.html" class="nav-link" > F#
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Getting Started.html" class="nav-link" > Getting started
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Solution Structure.html" class="nav-link" > Solution structure
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Transforming.html" class="nav-link" > Fantomas.Core overview (1)
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Traverse.html" class="nav-link" > Fantomas.Core overview (2)
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Formatted Code.html" class="nav-link" > Fantomas.Core overview (3)
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Conditional Compilation Directives.html" class="nav-link" > Formatting Conditional Compilation Directives
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/How Can I Contribute.html" class="nav-link" > How can I contribute?
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/The Missing Comment.html" class="nav-link" > The Missing Comment
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Multiple Times.html" class="nav-link" > Fantomas is trying to format the input multiple times due to the detection of multiple defines
+</a></li>
+
+<li class="nav-item active"><a href="https://fsprojects.github.io/fantomas/docs/contributors/Pull request ground rules.html" class="nav-link" > Pull request ground rules
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Updating the compiler.html" class="nav-link" > Updating the compiler sources
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Releases.html" class="nav-link" > Releases
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Glossary.html" class="nav-link" > Glossary
+</a></li>
+
+</div>
+                <li class="nav-header " id="api_reference">
+    API Reference
+    <iconify-icon icon="fluent:chevron-up-24-regular" width="32" height="32" rotate="180deg"></iconify-icon>
+</li>
+<div class="menu-items">
+    <li class="nav-item active"><a href="https://fsprojects.github.io/fantomas/reference/index.html" class="nav-link" > All Namespaces</a></li>
+
+</div>
+            </ul>
+        </div>
+        <a href="https://fsprojects.github.io/fantomas/">
+            <img alt="Header menu logo" src="https://fsprojects.github.io/fantomas/images/logo.png">
+            <strong>fantomas</strong>
+        </a>
+    </div>
+    <div class="end">
+        <a href="https://github.com/fsprojects/fantomas/" target="_blank">
+            <iconify-icon icon="uil:github" width="26" height="26"></iconify-icon>
+        </a>
+        <iconify-icon id="search-btn" icon="carbon:search" class="search" width="24" height="24"></iconify-icon>
+        <fsdocs-theme-toggle></fsdocs-theme-toggle>
+    </div>
+</header>
+<aside id="fsdocs-main-menu">
+    <ul class="menu">
+        <li class="nav-header">Links</li>
+        <li class="nav-item"><a class="nav-link" href="https://github.com/fsprojects/fantomas/blob/main/LICENSE.md">License</a>
+        </li>
+        <li class="nav-item"><a class="nav-link"
+                                href="https://github.com/fsprojects/fantomas/blob/main/CHANGELOG.md">Release
+            Notes</a></li>
+        <li class="nav-item"><a class="nav-link" href="https://github.com/fsprojects/fantomas/">Source
+            Repository</a></li>
+        <li class="nav-header " id="end-users">
+    End-users
+    <iconify-icon icon="fluent:chevron-up-24-regular" width="32" height="32" rotate="180deg"></iconify-icon>
+</li>
+<div class="menu-items">
+    <li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/GettingStarted.html" class="nav-link" > Getting Started
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/StyleGuide.html" class="nav-link" > Style guide
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/Configuration.html" class="nav-link" > Configuration
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/IgnoreFiles.html" class="nav-link" > Ignore Files
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/FormattingCheck.html" class="nav-link" > Formatting Check
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/GitHooks.html" class="nav-link" > Git hooks
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/Rider.html" class="nav-link" > JetBrains Rider
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/VisualStudio.html" class="nav-link" > Visual Studio
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/VSCode.html" class="nav-link" > Visual Studio Code
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/GeneratingCode.html" class="nav-link" > Generating source code
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/UpgradeGuide.html" class="nav-link" > Upgrade guide
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/Recipes.html" class="nav-link" > Recipes
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/end-users/FAQ.html" class="nav-link" > FAQ
+</a></li>
+
+</div>
+<li class="nav-header active" id="contributors">
+    Contributors
+    <iconify-icon icon="fluent:chevron-up-24-regular" width="32" height="32" rotate="180deg"></iconify-icon>
+</li>
+<div class="menu-items">
+    <li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Index.html" class="nav-link" > Contributors
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/FSharp.html" class="nav-link" > F#
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Getting Started.html" class="nav-link" > Getting started
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Solution Structure.html" class="nav-link" > Solution structure
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Transforming.html" class="nav-link" > Fantomas.Core overview (1)
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Traverse.html" class="nav-link" > Fantomas.Core overview (2)
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Formatted Code.html" class="nav-link" > Fantomas.Core overview (3)
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Conditional Compilation Directives.html" class="nav-link" > Formatting Conditional Compilation Directives
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/How Can I Contribute.html" class="nav-link" > How can I contribute?
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/The Missing Comment.html" class="nav-link" > The Missing Comment
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Multiple Times.html" class="nav-link" > Fantomas is trying to format the input multiple times due to the detection of multiple defines
+</a></li>
+
+<li class="nav-item active"><a href="https://fsprojects.github.io/fantomas/docs/contributors/Pull request ground rules.html" class="nav-link" > Pull request ground rules
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Updating the compiler.html" class="nav-link" > Updating the compiler sources
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Releases.html" class="nav-link" > Releases
+</a></li>
+
+<li class="nav-item "><a href="https://fsprojects.github.io/fantomas/docs/contributors/Glossary.html" class="nav-link" > Glossary
+</a></li>
+
+</div>
+        <li class="nav-header " id="api_reference">
+    API Reference
+    <iconify-icon icon="fluent:chevron-up-24-regular" width="32" height="32" rotate="180deg"></iconify-icon>
+</li>
+<div class="menu-items">
+    <li class="nav-item active"><a href="https://fsprojects.github.io/fantomas/reference/index.html" class="nav-link" > All Namespaces</a></li>
+
+</div>
+    </ul>
+</aside>
+<main>
+    <div id="content">
+        
+<h1><a name="Pull-request-ground-rules" class="anchor" href="#Pull-request-ground-rules">Pull request ground rules</a></h1>
+<p>We expect some things from code changes.
+In general, changes should be made as consistent to the current code base as possible.
+Don't introduce unnecessary new concepts and try and change as little code as possible to achieve your goal.</p>
+<p>Always start with the mindset that you are going to introduce a change that might have an impact on how the tool behaves.
+Capture this change first in a unit test. Set your expectations in the assert part of the test before touching anything.
+This project is very well suited for <a href="https://en.wikipedia.org/wiki/Test-driven_development">Test-driven development</a> and that should be the goal.</p>
+<p>Typical unit test template:</p>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="pn">[&lt;</span><span class="id">Test</span><span class="pn">&gt;]</span>
+<span class="k">let</span> <span class="fn">``my new test``</span> <span class="pn">(</span><span class="pn">)</span> <span class="o">=</span>
+    <span class="id">formatSourceString</span> <span class="k">false</span> <span class="s">&quot;&quot;&quot;</span>
+<span class="s">let myInput =     42</span>
+<span class="s">&quot;&quot;&quot;</span>  <span class="id">config</span>
+    <span class="o">|&gt;</span> <span class="id">prepend</span> <span class="id">newline</span>
+    <span class="o">|&gt;</span> <span class="id">should</span> <span class="id">equal</span> <span class="s">&quot;&quot;&quot;</span>
+<span class="s">let myInput = 42</span>
+<span class="s">&quot;&quot;&quot;</span>
+</code></pre>
+<p>The vast majority of the tests use the template listed above. Only deviate from this when necessary.
+Try and find a suitable file in <code>Fantomas.Core.Tests</code>, or introduce a new file.</p>
+<p>A new test file should look like:</p>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="k">module</span> <span class="id">Fantomas</span><span class="pn">.</span><span class="id">Core</span><span class="pn">.</span><span class="id">Tests</span><span class="pn">.</span><span class="id">MyNewConceptTests</span>
+
+<span class="k">open</span> <span class="id">NUnit</span><span class="pn">.</span><span class="id">Framework</span>
+<span class="k">open</span> <span class="id">FsUnit</span>
+<span class="k">open</span> <span class="id">Fantomas</span><span class="pn">.</span><span class="id">Core</span><span class="pn">.</span><span class="id">Tests</span><span class="pn">.</span><span class="id">TestHelpers</span>
+
+<span class="c">// add tests here...</span>
+</code></pre>
+<p>Filename: <code>MyNewConceptTests.fs</code>.</p>
+<p>When developing a new feature, add new tests to cover all code paths.</p>
+<p>If you come across an issue, which can't be reproduced with the latest version of Fantomas but is still open, please submit a regression test.
+That way, we can ensure the issue stays fixed after closing it.</p>
+<h2><a name="Guidelines" class="anchor" href="#Guidelines">Guidelines</a></h2>
+<h3><a name="Target-branch" class="anchor" href="#Target-branch">Target branch</a></h3>
+<p>Please always rebase your code on the targeted branch.
+To keep your fork up to date, run this command:</p>
+<blockquote>
+<p>git remote add upstream <a href="https://github.com/fsprojects/fantomas.git">https://github.com/fsprojects/fantomas.git</a></p>
+</blockquote>
+<p>Updating your fork:</p>
+<blockquote>
+<p>git checkout main &amp;&amp; git fetch upstream &amp;&amp; git rebase upstream/main &amp;&amp; git push</p>
+</blockquote>
+<h3><a name="Unit-test" class="anchor" href="#Unit-test">Unit test</a></h3>
+<ul>
+<li>Unit test names should start with a lowercase letter.</li>
+<li>When creating a test that is linked to a GitHub issue, add the number at the back with a comma, as in the following:</li>
+</ul>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="pn">[&lt;</span><span class="id">Test</span><span class="pn">&gt;]</span>
+<span class="k">let</span> <span class="fn">``preserve compile directive between piped functions, 512``</span> <span class="pn">(</span><span class="pn">)</span> <span class="o">=</span> <span class="o">..</span><span class="pn">.</span>
+</code></pre>
+<p>You don't need to repeat this number for tests that are deviations from the original report problem.</p>
+<h3><a name="Verify-signature-files" class="anchor" href="#Verify-signature-files">Verify signature files</a></h3>
+<p>Verify if the change you are making should also apply to signature files (<code>*.fsi</code>).</p>
+<h3><a name="Verify-slight-variations" class="anchor" href="#Verify-slight-variations">Verify slight variations</a></h3>
+<ul>
+<li>Check if you need additional tests to cope with a different combination of settings.</li>
+<li>Check if you need additional tests to cope with a different combination of defines (<code>#if DEBUG</code>, ...).</li>
+</ul>
+<h3><a name="Documentation" class="anchor" href="#Documentation">Documentation</a></h3>
+<p>Write/update documentation when necessary.<br />
+You can find instructions on how to run the documentation locally in the <a href="https://github.com/fsprojects/fantomas/blob/main/docs/.README.md">docs/.README.md</a> file.</p>
+<h3><a name="Pull-request-title" class="anchor" href="#Pull-request-title">Pull request title</a></h3>
+<ul>
+<li>
+<p>Give your PR a meaningful title. Make sure it covers the change you are introducing in Fantomas.</p>
+<p>For example:
+<em>"Fix bug 1404"</em> is a poor title as it does not tell the maintainers what changed in the codebase.<br />
+<em>"Don't double unindent when record has an access modifier"</em> is better as it informs us what exactly has changed.</p>
+</li>
+<li>
+<p>Add a link to the issue you are solving by using <a href="https://docs.github.com/en/github/managing-your-work-on-github/linking-a-pull-request-to-an-issue#linking-a-pull-request-to-an-issue-using-a-keyword">a keyword</a> in the PR description.<br />
+<em>"Fixes #1404"</em> does the trick quite well. GitHub will automatically close the issue if you used the correct wording.</p>
+<p><img src="../../images/github-linked-issue.png" alt="Linked issue" /></p>
+<p>Please verify your issue is linked. (<a href="https://docs.github.com/en/github/managing-your-work-on-github/linking-a-pull-request-to-an-issue#linking-a-pull-request-to-an-issue-using-a-keyword">GitHub documentation</a>)</p>
+</li>
+<li>
+<p>Not mandatory, but when fixing a bug consider using <code>fix-&lt;issue-number&gt;</code> as the git branch name.<br />
+For example, <code>git checkout -b fix-1404</code>.</p>
+</li>
+</ul>
+<h3><a name="Format-your-changes" class="anchor" href="#Format-your-changes">Format your changes</a></h3>
+<ul>
+<li>
+Code should be formatted to our standard style, using either <code>dotnet fsi build.fsx -p FormatAll</code> which works on all files, or
+<code>dotnet fsi build.fsx -p FormatChanged</code> to just change the files in git.
+<ul>
+<li>If you forget, there's a git <code>pre-commit</code> script that will run this for you, make sure to run <code>dotnet fsi build.fsx -p EnsureRepoConfig</code> to set that hook up.</li>
+</ul>
+</li>
+</ul>
+<h3><a name="Changelog" class="anchor" href="#Changelog">Changelog</a></h3>
+<ul>
+<li>
+Add an entry to the <code>CHANGELOG.md</code> in the <code>Unreleased</code> section based on what kind of change your change is. Follow the guidelines at <a href="https://keepachangelog.com/en/1.0.0/#how">KeepAChangelog</a> to make your message relevant to future readers.
+<ul>
+<li>If you're not sure what Changelog section your change belongs to, start with <code>Changed</code> and ask for clarification in your Pull Request</li>
+<li>
+<p>If there's not an <code>Unreleased</code> section in the <code>CHANGELOG.md</code>, create one at the top above the most recent version like so:</p>
+<table class="pre"><tr><td class="snippet"><pre class="fssnip"><code lang="markdown">## [Unreleased]
+
+### Changed</code></pre></td></tr></table>
+<ul>
+<li>
+<p>Your new feature goes here</p>
+<h2><a name="2022-02-10" class="anchor" href="#2022-02-10">[4.7.4] - 2022-02-10</a></h2>
+<h3><a name="Added" class="anchor" href="#Added">Added</a></h3>
+</li>
+<li>
+<p>Awesome feature number one</p>
+<pre class="fssnip highlighted"><code lang="fsharp"></code></pre>
+</li>
+</ul>
+</li>
+<li>
+When fixing a <code>bug (soundness)</code>, add a line in the following format to <code>Fixed</code>:
+<code>* &lt;Original GitHub issue title&gt; [#issue-number](https://github.com/fsprojects/fantomas/issues/issue-number)</code>.
+For example, <code>* Spaces are lost in multi range expression. [#2071](https://github.com/fsprojects/fantomas/issues/2071)</code>.
+Do the same, if you fixed a <code>bug (stylistic)</code> that is not related to any style guide.
+</li>
+<li>
+When fixing a <code>bug (stylistic)</code>, add a line in the following format to <code>Changed</code>
+<code>Update style of xyz. [#issue-number](https://github.com/fsprojects/fantomas/issues/issue-number)</code>
+</li>
+<li>For example, <code>* Update style of lambda argument. [#1871](https://github.com/fsprojects/fantomas/issues/1871)</code>.</li>
+</ul>
+</li>
+</ul>
+<h3><a name="Run-a-local-build" class="anchor" href="#Run-a-local-build">Run a local build</a></h3>
+<p>Finally, make sure to run <code>dotnet fsi build.fsx</code>. Among other things, this will check the format of the code and will tell you, if
+your changes caused any tests to fail.</p>
+<h3><a name="Small-steps" class="anchor" href="#Small-steps">Small steps</a></h3>
+<p>It is better to create a draft pull request with some initial small changes, and engage conversation, than to spend a lot of effort on a large pull request that was never discussed.
+Someone might be able to warn you in advance that your change will have wide implications for the rest of Fantomas, or might be able to point you in the right direction.
+However, this can only happen if you discuss your proposed changes early and often.
+It's often better to check <em>before</em> contributing that you're setting off on the right path.</p>
+<h2><a name="Coding-conventions" class="anchor" href="#Coding-conventions">Coding conventions</a></h2>
+<p>For consistency sake we have a few coding conventions. Please respect those to keep everything as streamlined as possible.</p>
+<h3><a name="Member-declaration" class="anchor" href="#Member-declaration">Member declaration</a></h3>
+<ul>
+<li>Use <code>x</code> as the the <code>self-identifier</code> if you need it.</li>
+</ul>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="k">type</span> <span onmouseout="hideTip(event, 'fs1', 1)" onmouseover="showTip(event, 'fs1', 1)" class="rt">Foo</span><span class="pn">(</span><span class="pn">)</span> <span class="o">=</span>
+    <span class="k">member</span> <span class="id">_</span><span class="pn">.</span><span class="prop">Children</span> <span class="o">=</span> <span class="pn">[</span><span class="pn">]</span>
+    
+    <span class="c">// ✔️ OK</span>
+    <span class="k">member</span> <span onmouseout="hideTip(event, 'fs2', 2)" onmouseover="showTip(event, 'fs2', 2)" class="fn">x</span><span class="pn">.</span><span class="prop">Length</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs2', 3)" onmouseover="showTip(event, 'fs2', 3)" class="fn">x</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs3', 4)" onmouseover="showTip(event, 'fs3', 4)" class="prop">Children</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs4', 5)" onmouseover="showTip(event, 'fs4', 5)" class="id">Length</span>
+    
+    <span class="c">// ❌ Not preferred, we use `x`</span>
+    <span class="k">member</span> <span onmouseout="hideTip(event, 'fs5', 6)" onmouseover="showTip(event, 'fs5', 6)" class="fn">this</span><span class="pn">.</span><span class="prop">WrongLength</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs5', 7)" onmouseover="showTip(event, 'fs5', 7)" class="fn">this</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs3', 8)" onmouseover="showTip(event, 'fs3', 8)" class="prop">Children</span><span class="pn">.</span><span onmouseout="hideTip(event, 'fs4', 9)" onmouseover="showTip(event, 'fs4', 9)" class="id">Length</span> <span class="o">-</span> <span class="n">1</span>
+</code></pre>
+<ul>
+<li>Use <code>_</code> when you don't need the <code>self-identifier</code>.</li>
+<li>Use <code>member val</code> when possible.</li>
+</ul>
+<pre class="fssnip highlighted"><code lang="fsharp"><span class="k">type</span> <span onmouseout="hideTip(event, 'fs1', 10)" onmouseover="showTip(event, 'fs1', 10)" class="id">Foo</span><span class="pn">(</span><span class="id">v</span><span class="pn">:</span> <span class="id">Value</span><span class="pn">)</span> <span class="o">=</span>
+    <span class="c">// ✔️ OK</span>
+    <span class="k">member</span> <span class="k">val</span> <span class="id">Value</span> <span class="o">=</span> <span class="id">v</span>
+    
+        <span class="c">// ❌ Not preferred.</span>
+    <span class="k">member</span> <span class="id">_</span><span class="pn">.</span><span class="id">WrongValue</span> <span class="o">=</span> <span class="id">v</span>
+</code></pre>
+<h2><a name="Fixing-style-guide-inconsistencies" class="anchor" href="#Fixing-style-guide-inconsistencies">Fixing style guide inconsistencies</a></h2>
+<p>Fantomas tries to keep up with the style guides, but as these are living documents, it can occur that something is listed in the style that Fantomas is not respecting.
+In this case, please create an issue using our <a href="https://fsprojects.github.io/fantomas-tools/#/">online tool</a>.
+Copy the code snippet from the guide and add a link to the section of the guide that is not being respected.
+The maintainers will then add the <code>bug (stylistic)</code> to confirm the bug is fixable in Fantomas. In most cases, it may seem obvious that the case can be fixed.
+However, in the past there have been changes to the style guide that Fantomas could not implement for technical reasons: Fantomas can only implement rules based on information entirely contained within the untyped syntax tree.</p>
+<h3><a name="Target-the-next-minor-or-major-branch" class="anchor" href="#Target-the-next-minor-or-major-branch">Target the next minor or major branch</a></h3>
+<p>When fixing a stylistic issue, please ask the maintainers what branch should be targeted. The rule of thumb is that the <code>main</code> branch is used for fixing <code>bug (soundness)</code> and will be used for revision releases.
+Strive to ensure that end users can always update to the latest patch revision of their current minor or major without fear.</p>
+<p>A user should only need to deal with style changes when they have explicitly <a href="https://github.com/fsprojects/fantomas/blob/main/docs/Documentation.md#updating-to-a-new-fantomas-version">chosen to upgrade</a> to a new minor or major version.
+In case no major or minor branch was created yet, please reach out to the maintainers.
+The maintainers will frequently rebase this branch on top of the main branch and release alpha/beta packages accordingly.</p>
+<fantomas-nav previous="Multiple%20Times.html" next="Updating%20the%20compiler.html"></fantomas-nav>
+
+        <div class="fsdocs-tip" id="fs1">Multiple items<br />type Foo =
+  new: unit -&gt; Foo
+  member Children: obj list
+  member Length: int
+  member WrongLength: int<br /><br />--------------------<br />new: unit -&gt; Foo</div>
+<div class="fsdocs-tip" id="fs2">val x: Foo</div>
+<div class="fsdocs-tip" id="fs3">property Foo.Children: obj list with get</div>
+<div class="fsdocs-tip" id="fs4">property List.Length: int with get</div>
+<div class="fsdocs-tip" id="fs5">val this: Foo</div>
+
+    </div>
+</main>
+<aside id="fsdocs-page-menu">
+    <p id="on-this-page">On this page</p>
+    <ul>
+  <li class="level-1">
+    <a href="#Pull-request-ground-rules">
+      Pull request ground rules
+    </a>
+  </li>
+  <li class="level-2">
+    <a href="#Guidelines">
+      Guidelines
+    </a>
+  </li>
+  <li class="level-3">
+    <a href="#Target-branch">
+      Target branch
+    </a>
+  </li>
+  <li class="level-3">
+    <a href="#Unit-test">
+      Unit test
+    </a>
+  </li>
+  <li class="level-3">
+    <a href="#Verify-signature-files">
+      Verify signature files
+    </a>
+  </li>
+  <li class="level-3">
+    <a href="#Verify-slight-variations">
+      Verify slight variations
+    </a>
+  </li>
+  <li class="level-3">
+    <a href="#Documentation">
+      Documentation
+    </a>
+  </li>
+  <li class="level-3">
+    <a href="#Pull-request-title">
+      Pull request title
+    </a>
+  </li>
+  <li class="level-3">
+    <a href="#Format-your-changes">
+      Format your changes
+    </a>
+  </li>
+  <li class="level-3">
+    <a href="#Changelog">
+      Changelog
+    </a>
+  </li>
+  <li class="level-2">
+    <a href="#2022-02-10">
+      [4.7.4] - 2022-02-10
+    </a>
+  </li>
+  <li class="level-3">
+    <a href="#Added">
+      Added
+    </a>
+  </li>
+  <li class="level-3">
+    <a href="#Run-a-local-build">
+      Run a local build
+    </a>
+  </li>
+  <li class="level-3">
+    <a href="#Small-steps">
+      Small steps
+    </a>
+  </li>
+  <li class="level-2">
+    <a href="#Coding-conventions">
+      Coding conventions
+    </a>
+  </li>
+  <li class="level-3">
+    <a href="#Member-declaration">
+      Member declaration
+    </a>
+  </li>
+  <li class="level-2">
+    <a href="#Fixing-style-guide-inconsistencies">
+      Fixing style guide inconsistencies
+    </a>
+  </li>
+  <li class="level-3">
+    <a href="#Target-the-next-minor-or-major-branch">
+      Target the next minor or major branch
+    </a>
+  </li>
+</ul>
+</aside>
+<dialog>
+    <input type="search" placeholder="Search docs" />
+    <div class="results">
+        <ul></ul>
+        <p class="empty">Type something to start searching.</p>
+    </div>
+</dialog>
+<script type="module" src="https://fsprojects.github.io/fantomas/content/fsdocs-tips.js"></script>
+<script type="module" src="https://fsprojects.github.io/fantomas/content/fsdocs-theme-toggle.js"></script>
+<script type="module" src="https://fsprojects.github.io/fantomas/content/fsdocs-theme.js"></script>
+<script type="module" src="https://fsprojects.github.io/fantomas/content/fsdocs-search.js"></script>
+<script type="module">
+    import mermaid from "https://esm.sh/mermaid@9.2.2";
+    mermaid.initialize({
+        startOnLoad: true,
+        theme: "base",
+        themeVariables: {
+            primaryColor: '#338cbb',
+            primaryTextColor: '#FFF',
+            primaryBorderColor: '#5aacd6'
+        }
+    });
+
+    const menuHeaders = [...document.querySelectorAll(".nav-header")].filter(nh => nh.id);
+    menuHeaders.forEach(nv => {
+        nv.addEventListener("click", () => {
+            nv.classList.toggle("active");
+        })
+    })
+</script>
+<script type="module" src="https://fsprojects.github.io/fantomas/content/webcomponents.js"></script>
+</body>
+</html>
